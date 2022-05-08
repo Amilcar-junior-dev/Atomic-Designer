@@ -137,10 +137,13 @@ const Home: React.FC<PropsHome> = ({
                 </Box>
 
                 <Box
+                 marginTop={'5px'}
                     heigth='30px'
                     flexDirections='row'
                     justifyContent='space-between'>
                     <Box
+                        
+                       
                         width='40%'
                         heigth='100%'
                         justifyContent='space-between'
@@ -165,6 +168,7 @@ const Home: React.FC<PropsHome> = ({
                             }} />
                     </Box>
                     <Box
+                       
                         alignItems='flex-end'
                         width='50%'
                         heigth='100%'>
