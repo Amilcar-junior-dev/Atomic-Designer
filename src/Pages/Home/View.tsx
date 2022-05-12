@@ -1,200 +1,190 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
-import { Container, BoxTop, Box } from '../../Atomic/Atoms/Box';
+import { ScrollView, View } from 'react-native';
+import { BoxContainer, BoxTouch, Box } from '../../Atomic/Atoms/Box';
+import BoxShadow from '../../Atomic/Atoms/Box/shadow'
 import { Text } from '../../Atomic/Atoms/Text'
 import { Image } from '../../Atomic/Image';
+
+import { ContainerScrollHorizontall } from '../../Atomic/Moleculs/ContainerScrollHorizontal'
+
 import { PropsHome } from './Models';
+
+import Icon from 'react-native-vector-icons/Ionicons'
+
+
 
 
 const Home: React.FC<PropsHome> = ({
-    data
+    nameUser,
+    messageUser,
+    movies,
+    series,
+    onPress,
+    data,
+    filme,
+    title,
+
 }) => {
     return (
-        <Container
-            backgroundColor='#EFEFEF'>
-            <BoxTop
-                marginTop='21px'
-                heigth='50px'
-                flexDirections='row'
-                alignItems='center'
-                justifyContent='space-between'>
-                <BoxTop
-                    width='100px'
-                    heigth='100%'
-                    flexDirections='row'
-                    alignItems='center'>
-                    <Image
-                        source={require('../../Assets/Home/logo.png')}
-                        style={{
-                            width: 40,
-                            height: 40
-                        }} />
-                    <Text
-                        color='#000'
-                        fSize={20}
-                        fWeight='bold'>
-                        Cykol
-                    </Text>
 
-                </BoxTop>
+        <BoxContainer
 
-                <BoxTop
-                    width='100px'
-                    heigth='100%'
+            backgroundColor='#000000' >
+            <ScrollView>
+                <Box
+                    marginTop='10px'
+                    width='100%'
+                    height='50px'
                     flexDirections='row'>
-                    <Image
-                        source={require('../../Assets/Home/msg.png')}
-                        width={40}
-                        height={40} />
-                    <Image
-                        source={require('../../Assets/Home/config.png')}
-                        width={40}
-                        height={40} />
-                </BoxTop>
-            </BoxTop>
-
-            <Box
-                heigth='80px'
-                width='100%'
-                justifyContent='center'>
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                    {data.map((item, index) => (
-                        <Box key={index}
-                            width='80px'
-                            heigth='100%'
-                            marginRight='20px'
-                            borderRadius='20px'
-                            borderColor="#fa00fe"
-                            borderWidth='1px'
-                            alignItems='center'
+                    <Box
+                        height='100%'
+                        width='80%'
+                        flexDirections='row'>
+                        <Box
+                            width='30%'
+                            height='100%'
+                            marginRight='5px'
                             justifyContent='center'
-                            pd={6}>
+                            alignItems='center'>
+                            <Image source={require('../../Assets/user.png')}
+                                style={{
+                                    width: 50,
+                                    height: 50,
+                                    borderRadius: 75
+                                }}
+                                resizeMode='center' />
+
+                        </Box>
+                        <Box
+                            width='100%'
+                            height='100%'
+                            flexDirections='column'>
+                            <Text
+                                fSize={15}
+                                color='#fff'>
+                                {messageUser}
+                            </Text>
+                            <Text
+                                fSize={20}
+                                color='#fff'>
+                                {nameUser}
+                            </Text>
+
+                        </Box>
+
+
+                    </Box>
+                    <Box
+                        backgroundColor='#ffffff68'
+                        height='80%'
+                        width='10%'
+                        borderRadius='10px'
+                        alignItems='center'
+                        justifyContent='center'>
+                        <Icon
+                            name='notifications' size={25} color='#eeff00b5' />
+                    </Box>
+                </Box>
+                <Box
+                    marginTop='50px'
+                    marginBottom='15px'
+                    height='30px'
+                    borderRadius='8px'
+                    flexDirections='row'
+                    justifyContent='space-between'
+                    backgroundColor='#8381813c'>
+                    <BoxTouch
+                        width='50%'
+                        height='100%'
+                        alignItems='center'
+                        justifyContent='center'
+                        onPress={onPress}>
+                        <Text
+                            fSize={15}
+                            fWeight='bold'
+                            color='#fff'>
+                            {movies}
+                        </Text>
+                    </BoxTouch>
+
+                    <BoxTouch
+                        width='50%'
+                        height='100%'
+                        alignItems='center'
+                        justifyContent='center'
+                        onPress={onPress}>
+                        <Text
+                            fSize={15}
+                            fWeight='bold'
+                            color='#fff'>
+                            {series}
+                        </Text>
+                    </BoxTouch>
+                </Box>
+
+               
+                <ContainerScrollHorizontall
+                >
+
+                    {data.map((item, index) => (
+                        <Box
+                            key={index}
+                            height='90%'
+                            width='150px'
+                            marginLeft='10px'
+                            borderRadius='10px'>
                             <Image source={item.image}
                                 style={{
                                     width: '100%',
                                     height: '100%',
-                                }}
-                                resizeMode='stretch'
-                                br={16} />
+                                    borderRadius: 10
+                                }} />
                         </Box>
                     ))}
-                </ScrollView>
-            </Box>
-
-            <Box
-                backgroundColor='#F2EBE1'
-                width='100%'
-                heigth='70%'
-                marginTop='10px'
-                alignItems='center'
-                borderRadius='20px'>
+                </ContainerScrollHorizontall>
                 <Box
-                    marginTop='10px'
-                    marginBottom='10px'
+                    marginTop='15px'
+                    marginBottom='5px'
+                    height='20px'
+                    justifyContent='center'
                     marginLeft='10px'
-                    marginRight='10px'
-                    width='90%'
-                    heigth='81%'
-                    borderRadius='20px'
-                    position='static'>
-                    <Box
-                        backgroundColor='#6c6969'
-                        width='100%'
-                        heigth='90%'
-                        borderRadius='20px'>
-                        <Image source={require('../../Assets/Home/tzuyu.jpeg')}
-                            style={{
-                                width: '100%',
-                                height: '100%'
-                            }}
-                            br={20} />
-                    </Box>
-
-                    <Box
-                        backgroundColor='#ffffff7c'
-                        borderRadius='20px'
-                        width='70%'
-                        heigth='0px'
-                        marginTop='90%'
-                        position='absolute'
-                        flexDirections='column'
-                        justifyContent='center'
-                        pd={10}>
-                        <Text
-                            fSize={20}
-                            color='#050505'
-                            fWeight='bold'>
-                            Idol Championship
-                        </Text>
-
-                        <Text
-                            fSize={20}
-                            color='#000'
-                            fWeight='bold'>
-                            in 2022
-                        </Text>
-                    </Box>
-                </Box>
-
-                <Box
-                 marginTop={'5px'}
-                    heigth='30px'
-                    flexDirections='row'
-                    justifyContent='space-between'>
-                    <Box
-                        
-                       
-                        width='40%'
-                        heigth='100%'
-                        justifyContent='space-between'
-                        flexDirections='row'>
-                        <Image source={require('../../Assets/Home/coracaopb.png')}
-                            style={{
-                                width: 30,
-                                height: 30,
-                                marginLeft: 5
-                            }} />
-                        <Image
-                            source={require('../../Assets/Home/carta.png')}
-                            style={{
-                                width: 30,
-                                height: 30
-                            }} />
-                        <Image
-                            source={require('../../Assets/Home/env.png')}
-                            style={{
-                                width: 30,
-                                height: 30
-                            }} />
-                    </Box>
-                    <Box
-                       
-                        alignItems='flex-end'
-                        width='50%'
-                        heigth='100%'>
-                        <Image
-                            source={require('../../Assets/Home/salvo.png')}
-                            style={{
-                                width: 30,
-                                height: 30,
-                                marginRight: 5
-                            }}/>
-                    </Box>
-                </Box>
-                <Box
-                    marginTop='4px'
-                    alignItems='flex-start'
-                    heigth="30px"
-                    pd={5}
-                    borderRadius='6px'>
+                    alignItems='flex-start'>
                     <Text
-                        fSize={15}>
-                        Tzuiu Archery Session Moment in 2021
+                        fSize={15}
+                        color='#fff'
+                        fWeight='bold'>
+                            {title}
                     </Text>
                 </Box>
-            </Box>
 
-        </Container>
+                <ContainerScrollHorizontall>
+                    {filme.map((item, index) => (
+                        <Box
+                            key={index}
+                            height='90%'
+                            width='150px'
+                            marginLeft='10px'
+                            borderRadius='10px'>
+                            <Image source={item.image}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    borderRadius: 10
+                                }} />
+                        </Box>
+                    ))}
+                </ContainerScrollHorizontall>
+
+
+
+
+
+
+
+            </ScrollView>
+        </BoxContainer>
+
+
     )
 }
 export default Home;
