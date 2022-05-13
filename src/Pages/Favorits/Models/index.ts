@@ -7,7 +7,6 @@ export interface PropsHome {
     data?: PropsData[]
     filme?: PropsFilme[]
     onPress?: ()=> any 
-    value?: any
 }
  
 interface PropsData{
