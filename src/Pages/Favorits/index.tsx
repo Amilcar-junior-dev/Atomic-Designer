@@ -1,11 +1,33 @@
-import React, { useContext, useState } from 'react';
+import React from 'react';
 import { PropsHome } from './Models';
 import View from './View'
-import { AuthContext } from '../../Context/auth';
-const Home: React.FC<PropsHome> = ({
+const Favorits:React.FC<PropsHome> =({
+    
+})=>{
+    const data = [
+        {
+            id: 1,
+            image: require('../../Assets/vingadoresUltimato.jpg')
+        },
+        {
+            id: 2,
+            image: require('../../Assets/doutorEstranho.jpeg')
+        },
+        {
+            id: 3,
+            image: require('../../Assets/hulk.jpeg')
+        }, 
+        {
+            id: 1,
+            image: require('../../Assets/interestelar.jpeg')
+        },
+        {
+            id: 2,
+            image: require('../../Assets/alien.jpg')
+        },
 
-}) => {
-    const value = useContext(AuthContext)
+    ]
+
     const filme = [
         {
             id: 1,
@@ -27,34 +49,17 @@ const Home: React.FC<PropsHome> = ({
             id: 5,
             image: require('../../Assets/velosesFuriosos.jpeg')
         },
-        {
-            id: 6,
-            image: require('../../Assets/doutorEstranho.jpeg')
-        },
-        {
-            id: 7,
-            image: require('../../Assets/hulk.jpeg')
-        },
-        {
-            id: 8,
-            image: require('../../Assets/interestelar.jpeg')
-        },
-        {
-            id: 9,
-            image: require('../../Assets/alien.jpg')
-        },
-
     ]
-    return (
+    return(
         <View
             nameUser='User 1'
             messageUser='Hello'
             movies='Movies'
             series='Series'
             title='Recent Watched'
+            data={data}
             filme={filme}
-            value={value}
         />
     )
 }
-export default Home;
+export default Favorits;

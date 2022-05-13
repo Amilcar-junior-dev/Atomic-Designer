@@ -14,11 +14,10 @@ export const ViewContainerScrollHorizontal: React.FC<PropsContainerScrollHorizon
 }) => {
     return (
         <Box
-            backgroundColor='#fff'
             height='200px'
             marginBottom='20px'
             justifyContent='center'>
-            <Box
+            <Box backgroundColor='transparent'
                 height='100%'>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                     {children}
@@ -27,5 +26,3 @@ export const ViewContainerScrollHorizontal: React.FC<PropsContainerScrollHorizon
         </Box>
     )
 }
-
-/*  */
