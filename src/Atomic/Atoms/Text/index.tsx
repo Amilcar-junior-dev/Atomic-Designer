@@ -28,11 +28,8 @@ export const Text: React.FC<TextProps> = ({
             marginBottom={marginBottom}
             marginTop={marginTop}
             padding={padding}
-            position={position}
-
-        >
+            position={position}>
             {children}
         </TextRegular>
-
     )
 }

@@ -1,29 +1,36 @@
-import React, { useContext } from 'react';
-import { ScrollView, } from 'react-native';
-import { BoxTouch, Box } from '../../Atomic/Atoms/Box';
-import { Container } from '../../Atomic/Atoms/Box/styledLinear';
+import React from 'react';
+import { ScrollView, View } from 'react-native';
+import { BoxContainer, BoxTouch, Box } from '../../Atomic/Atoms/Box';
 import BoxShadow from '../../Atomic/Atoms/Box/shadow'
 import { Text } from '../../Atomic/Atoms/Text'
 import { Image } from '../../Atomic/Image';
-import { ContainerScrollHorizontall } from '../../Atomic/Moleculs/ContainerScrollHorizontal';
+
+import { ContainerScrollHorizontall } from '../../Atomic/Moleculs/ContainerScrollHorizontal'
+
 import { PropsHome } from './Models';
 
 import Icon from 'react-native-vector-icons/Ionicons'
-import Circle from 'react-native-vector-icons/FontAwesome'
 
-const Home: React.FC<PropsHome> = ({
+
+
+
+const Favorits: React.FC<PropsHome> = ({
     nameUser,
     messageUser,
     movies,
     series,
     onPress,
+    data,
     filme,
     title,
-    value,
+
 }) => {
     return (
-        <Container style={{ flex: 1 }} colors={['#000000', '#37393e', '#000000']}>
-            <ScrollView showsVerticalScrollIndicator={false}>
+
+        <BoxContainer
+
+            backgroundColor='#000000' >
+            <ScrollView>
                 <Box
                     marginTop='10px'
                     width='100%'
@@ -46,6 +53,7 @@ const Home: React.FC<PropsHome> = ({
                                     borderRadius: 75
                                 }}
                                 resizeMode='center' />
+
                         </Box>
                         <Box
                             width='100%'
@@ -54,7 +62,7 @@ const Home: React.FC<PropsHome> = ({
                             <Text
                                 fSize={15}
                                 color='#fff'>
-                                { messageUser}
+                                {messageUser}
                             </Text>
                             <Text
                                 fSize={20}
@@ -63,6 +71,8 @@ const Home: React.FC<PropsHome> = ({
                             </Text>
 
                         </Box>
+
+
                     </Box>
                     <Box
                         backgroundColor='#ffffff68'
@@ -72,7 +82,7 @@ const Home: React.FC<PropsHome> = ({
                         alignItems='center'
                         justifyContent='center'>
                         <Icon
-                            name='notifications-outline' size={20} color='#eeff00b5' />
+                            name='notifications' size={25} color='#eeff00b5' />
                     </Box>
                 </Box>
                 <Box
@@ -112,67 +122,26 @@ const Home: React.FC<PropsHome> = ({
                     </BoxTouch>
                 </Box>
 
-                <ContainerScrollHorizontall >
-                    {value?.map((item, index) => (
+               
+                <ContainerScrollHorizontall
+                >
+
+                    {data.map((item, index) => (
                         <Box
                             key={index}
                             height='90%'
-                            alignItems='center'
                             width='150px'
                             marginLeft='10px'
                             borderRadius='10px'>
-                            <Image source={{ uri: item.image.medium }} style={{
-                                width: '80%',
-                                height: '100%',
-                                borderRadius: 10}}/>
-                            <Box alignItems='center' height='100%' >
-                                <Text fSize={15} fWeight='bold' color='#ff0000'>
-                                    {item.name}
-                                </Text>
-                            </Box>
-
+                            <Image source={item.image}
+                                style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    borderRadius: 10
+                                }} />
                         </Box>
                     ))}
                 </ContainerScrollHorizontall>
-
-                <Box
-                    height='80px'
-                    alignItems='center'>
-                    <Text
-                        fSize={15}
-                        color='#ffffff68'>
-                        Episódio 1
-                    </Text>
-                    <Text
-                        fSize={25}
-                        fWeight='bold'
-                        color='#ffffff'>
-                        THE 100
-                    </Text>
-
-                    <Box
-                        flexDirections='row'
-                        alignItems='center'
-                        justifyContent='center'
-                        width='90px'
-                        height='15px'>
-                        <Box
-                            width='15px'>
-                            <Circle name='circle' size={10} color='#ffffff6a' />
-                        </Box>
-
-                        <Box
-                            width='15px'>
-                            <Circle name='circle' size={10} color='#ffffff' />
-                        </Box>
-
-                        <Box
-                            width='15px'>
-                            <Circle name='circle' size={10} color='#ffffff6a' />
-                        </Box>
-                    </Box>
-                </Box>
-
                 <Box
                     marginTop='15px'
                     marginBottom='5px'
@@ -184,10 +153,9 @@ const Home: React.FC<PropsHome> = ({
                         fSize={15}
                         color='#fff'
                         fWeight='bold'>
-                        {title}
+                            {title}
                     </Text>
                 </Box>
-
 
                 <ContainerScrollHorizontall>
                     {filme.map((item, index) => (
@@ -207,7 +175,9 @@ const Home: React.FC<PropsHome> = ({
                     ))}
                 </ContainerScrollHorizontall>
             </ScrollView>
-        </Container>
+        </BoxContainer>
+
+
     )
 }
-export default Home;
+export default Favorits;
