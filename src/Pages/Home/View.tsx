@@ -22,7 +22,7 @@ const Home: React.FC<PropsHome> = ({
     value,
 }) => {
     return (
-        <Container style={{ flex: 1 }} colors={['#000000', '#37393e', '#000000']}>
+        <Container  colors={['#000000', '#37393e', '#000000']}>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Box
                 marginBottom='30px'
