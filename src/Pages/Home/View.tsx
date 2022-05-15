@@ -25,6 +25,7 @@ const Home: React.FC<PropsHome> = ({
         <Container style={{ flex: 1 }} colors={['#000000', '#37393e', '#000000']}>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Box
+                marginBottom='30px'
                     marginTop='10px'
                     width='100%'
                     height='50px'
@@ -75,42 +76,7 @@ const Home: React.FC<PropsHome> = ({
                             name='notifications-outline' size={20} color='#eeff00b5' />
                     </Box>
                 </Box>
-                <Box
-                    marginTop='50px'
-                    marginBottom='15px'
-                    height='30px'
-                    borderRadius='8px'
-                    flexDirections='row'
-                    justifyContent='space-between'
-                    backgroundColor='#8381813c'>
-                    <BoxTouch
-                        width='50%'
-                        height='100%'
-                        alignItems='center'
-                        justifyContent='center'
-                        onPress={onPress}>
-                        <Text
-                            fSize={15}
-                            fWeight='bold'
-                            color='#fff'>
-                            {movies}
-                        </Text>
-                    </BoxTouch>
-
-                    <BoxTouch
-                        width='50%'
-                        height='100%'
-                        alignItems='center'
-                        justifyContent='center'
-                        onPress={onPress}>
-                        <Text
-                            fSize={15}
-                            fWeight='bold'
-                            color='#fff'>
-                            {series}
-                        </Text>
-                    </BoxTouch>
-                </Box>
+             
 
                 <ContainerScrollHorizontall >
                     {value?.map((item, index) => (
