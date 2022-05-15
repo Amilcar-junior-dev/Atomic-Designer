@@ -124,7 +124,8 @@ const Home: React.FC<PropsHome> = ({
                             <Image source={{ uri: item.image.medium }} style={{
                                 width: '80%',
                                 height: '100%',
-                                borderRadius: 10}}/>
+                                borderRadius: 10
+                            }}/>
                             <Box alignItems='center' height='100%' >
                                 <Text fSize={15} fWeight='bold' color='#ff0000'>
                                     {item.name}
