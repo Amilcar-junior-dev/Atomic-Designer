@@ -19,4 +19,5 @@ const Favorit = () => {
         </Container>
     );
 };
+
 export default Favorit;
