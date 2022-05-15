@@ -1,4 +1,4 @@
-export interface PropsHome {
+export interface PropsProfile {
     title?: string
     nameUser: string
     messageUser?: string
@@ -7,6 +7,7 @@ export interface PropsHome {
     data?: PropsData[]
     filme?: PropsFilme[]
     onPress?: ()=> any 
+    value?: any
 }
  
 interface PropsData{
