@@ -14,10 +14,8 @@ import Circle from 'react-native-vector-icons/FontAwesome'
 const Home: React.FC<PropsHome> = ({
     nameUser,
     messageUser,
-    movies,
-    series,
-    onPress,
     filme,
+    movies,
     title,
     value,
 }) => {
@@ -76,7 +74,21 @@ const Home: React.FC<PropsHome> = ({
                             name='notifications-outline' size={20} color='#eeff00b5' />
                     </Box>
                 </Box>
-             
+                                
+                <Box
+                    marginTop='15px'
+                    marginBottom='5px'
+                    height='20px'
+                    justifyContent='center'
+                    marginLeft='10px'
+                    alignItems='flex-start'>
+                    <Text
+                        fSize={15}
+                        color='#fff'
+                        fWeight='bold'>
+                        {movies}
+                    </Text>
+                </Box>
 
                 <ContainerScrollHorizontall >
                     {value?.map((item, index) => (

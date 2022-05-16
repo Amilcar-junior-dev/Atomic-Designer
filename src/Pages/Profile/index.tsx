@@ -8,7 +8,8 @@ const Home: React.FC<PropsProfile> = ({
  
     return (
         <View
-           
+           nameUser='user'
+           messageUser='Status'
         />
     )
 }

@@ -49,7 +49,7 @@ const Home: React.FC<PropsHome> = ({
         <View
             nameUser='User 1'
             messageUser='Hello'
-            movies='Movies'
+            movies='Sugestions'
             series='Series'
             title='Recent Watched'
             filme={filme}
