@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
-import { ScrollView, } from 'react-native';
+import React, { Children } from 'react';
+import { ScrollView, TextInput } from 'react-native';
 import { BoxTouch, Box } from '../../Atomic/Atoms/Box';
 import { Container } from '../../Atomic/Atoms/Box/styledLinear';
-import BoxShadow from '../../Atomic/Atoms/Box/shadow'
 import { Text } from '../../Atomic/Atoms/Text'
 import { Image } from '../../Atomic/Image';
 import { ContainerScrollHorizontall } from '../../Atomic/Moleculs/ContainerScrollHorizontal';
@@ -10,6 +9,7 @@ import { PropsHome } from './Models';
 
 import Icon from 'react-native-vector-icons/Ionicons'
 import Circle from 'react-native-vector-icons/FontAwesome'
+import Lupa from 'react-native-vector-icons/Entypo'
 
 const Home: React.FC<PropsHome> = ({
     nameUser,
@@ -18,12 +18,18 @@ const Home: React.FC<PropsHome> = ({
     movies,
     title,
     value,
+    onPress,
+    text,
+    setText,
+    resp,
+    searchMovies,
 }) => {
+    console.log(resp.length)
     return (
-        <Container  colors={['#000000', '#37393e', '#000000']}>
+        <Container colors={['#000000', '#37393e', '#000000']}>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Box
-                marginBottom='30px'
+                    marginBottom='30px'
                     marginTop='10px'
                     width='100%'
                     height='50px'
@@ -53,7 +59,7 @@ const Home: React.FC<PropsHome> = ({
                             <Text
                                 fSize={15}
                                 color='#fff'>
-                                { messageUser}
+                                {messageUser}
                             </Text>
                             <Text
                                 fSize={20}
@@ -74,7 +80,43 @@ const Home: React.FC<PropsHome> = ({
                             name='notifications-outline' size={20} color='#eeff00b5' />
                     </Box>
                 </Box>
-                                
+
+                <Box
+                    height='40px'
+                    alignItems='flex-end'>
+                    <Box
+                        height='100%'
+                        width='70%'
+                        backgroundColor='#ffffff'
+                        marginRight='5px'
+                        flexDirections='row'
+                        justifyContent='space-between'
+                        borderRadiusTopLeft='5px'
+                        borderRadiusTopRight='5px'
+                        borderRadiusBottomLeft='5px'
+                        borderRadiusBottomRight='5px'>
+                        <TextInput
+                            value={text}
+                            onChangeText={(text) => setText(text)} />
+                        <BoxTouch
+                            onPress={searchMovies}
+                            height='100%'
+                            width='20%'
+                            borderRadiusTopRight='5px'
+                            borderRadiusBottomRight='5px'
+                            backgroundColor='#feed00a9'
+                            alignItems='center'
+                            justifyContent='center'>
+
+                            <Lupa name='magnifying-glass' size={20} color='#000' />
+
+                        </BoxTouch>
+
+
+                    </Box>
+                </Box>
+
+
                 <Box
                     marginTop='15px'
                     marginBottom='5px'
@@ -103,7 +145,7 @@ const Home: React.FC<PropsHome> = ({
                                 width: '80%',
                                 height: '100%',
                                 borderRadius: 10
-                            }}/>
+                            }} />
                             <Box alignItems='center' height='100%' >
                                 <Text fSize={15} fWeight='bold' color='#ff0000'>
                                     {item.name}
@@ -152,6 +194,9 @@ const Home: React.FC<PropsHome> = ({
                     </Box>
                 </Box>
 
+
+
+
                 <Box
                     marginTop='15px'
                     marginBottom='5px'
@@ -185,6 +230,7 @@ const Home: React.FC<PropsHome> = ({
                         </Box>
                     ))}
                 </ContainerScrollHorizontall>
+
             </ScrollView>
         </Container>
     )

@@ -16,6 +16,7 @@ export default function () {
         <Tab.Navigator initialRouteName='Home'
             screenOptions={{
                 tabBarShowLabel: false,
+                tabBarHideOnKeyboard: true,
                 tabBarStyle: {
                     position: 'absolute',
                     left: 15,
@@ -28,6 +29,7 @@ export default function () {
                     shadowOpacity: 0.25,
                     shadowRadius: 10,
                 }
+                
             }}>
 
             <Tab.Screen

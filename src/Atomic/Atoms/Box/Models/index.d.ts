@@ -49,6 +49,10 @@ export interface BoxProps {
     marginLeft?: string | number
     marginRight?: string | number 
     borderRadius?: string | number
+    borderRadiusTopLeft?: string | number 
+    borderRadiusTopRight?: string | number
+    borderRadiusBottomLeft?: string | number
+    borderRadiusBottomRight?: string | number
     borderColor?: string 
     borderWidth?: string
     position?: 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky'
@@ -67,6 +71,10 @@ export interface PropsBoxTouch{
     marginLeft?: string | number
     marginRight?: string | number 
     borderRadius?: string | number
+    borderRadiusTopLeft?: string | number 
+    borderRadiusTopRight?: string | number
+    borderRadiusBottomLeft?: string | number
+    borderRadiusBottomRight?: string | number
     borderColor?: string 
     borderWidth?: string
     position?: 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky'

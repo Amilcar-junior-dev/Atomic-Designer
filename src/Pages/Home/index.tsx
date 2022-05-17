@@ -1,11 +1,43 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { PropsHome } from './Models';
 import View from './View'
 import { AuthContext } from '../../Context/auth';
+import api from '../../Utils/axios';
+
 const Home: React.FC<PropsHome> = ({
 
 }) => {
-    const value = useContext(AuthContext)
+    const [text, setText] = useState('');
+    const [resp, setResp] = useState([]);
+    const value = useContext(AuthContext);
+
+    function searchMovies(){
+        
+         async function getShows() {
+
+            try {
+                if(text != ''){
+                   const search = await api.get(`/search/shows?q=${text}`);
+                     setResp( search.data)
+                    console.log(resp[0].show.name)  
+                 
+                }else{
+                    alert('Digite o nome de um filme');
+                }
+                 
+            } catch (error) {
+                alert('error Request API')
+            }
+
+        }
+        getShows();
+    }
+
+    useEffect(() => {
+       
+
+    }, [])
+
     const filme = [
         {
             id: 1,
@@ -45,6 +77,9 @@ const Home: React.FC<PropsHome> = ({
         },
 
     ]
+
+
+
     return (
         <View
             nameUser='User 1'
@@ -54,6 +89,10 @@ const Home: React.FC<PropsHome> = ({
             title='Recent Watched'
             filme={filme}
             value={value}
+            text={text}
+            setText={setText}
+            resp={resp}
+            searchMovies={searchMovies}
         />
     )
 }

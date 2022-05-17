@@ -2,14 +2,11 @@ import React from 'react';
 import { ScrollView } from 'react-native';
 
 import { PropsContainerScrollHorizontal } from './Models';
-import { Box, BoxShadow } from '../../Atoms/Box';
-import { Image } from '../../Image'
-import { Text } from '../../Atoms/Text'
+import { Box } from '../../Atoms/Box';
+
 
 export const ViewContainerScrollHorizontal: React.FC<PropsContainerScrollHorizontal> = ({
-    title,
-    data,
-    filme,
+    
     children
 }) => {
     return (

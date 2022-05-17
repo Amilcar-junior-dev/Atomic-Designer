@@ -8,6 +8,10 @@ export interface PropsHome {
     filme?: PropsFilme[]
     onPress?: ()=> any 
     value?: any
+    text?: any
+    setText?: any
+    resp?: any
+    searchMovies?:()=>any
 }
  
 interface PropsData{
@@ -17,4 +21,11 @@ interface PropsData{
 interface PropsFilme{
     id: number
     image: any
+}
+
+interface PropsResp{
+    id?: number
+    image?: any
+    name?: string
+    score?: string
 }

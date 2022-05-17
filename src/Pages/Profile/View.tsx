@@ -4,6 +4,7 @@ import { Text } from '../../Atomic/Atoms/Text';
 import { Box } from '../../Atomic/Atoms/Box';
 import { Image } from '../../Atomic/Image'
 import { PropsProfile } from './Models';
+import { Division } from '../../Atomic/Atoms/Division/styled';
 
 
 const Profile: React.FC<PropsProfile> = ({
@@ -38,10 +39,11 @@ const Profile: React.FC<PropsProfile> = ({
                         color='#fff'>
                         {messageUser}
                     </Text>
-
                 </Box>
-
             </Box>
+
+            <Division backgroundColor='#cdcdcd'/> 
+            
         </Container>
     );
 };
