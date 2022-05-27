@@ -1,5 +1,7 @@
 import React, { Children } from 'react';
 import { ScrollView, TextInput } from 'react-native';
+
+import theme from '../../Style/theme';
 import { BoxTouch, Box } from '../../Atomic/Atoms/Box';
 import { Container } from '../../Atomic/Atoms/Box/styledLinear';
 import { Text } from '../../Atomic/Atoms/Text'
@@ -24,7 +26,7 @@ const Home: React.FC<PropsHome> = ({
     resp,
     searchMovies,
 }) => {
-    console.log(resp.length)
+    const {colors} = theme
     return (
         <Container colors={['#000000', '#37393e', '#000000']}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -58,26 +60,26 @@ const Home: React.FC<PropsHome> = ({
                             flexDirections='column'>
                             <Text
                                 fSize={15}
-                                color='#fff'>
+                                color={colors.COLOR_PRYMARY_WHITE_BASE_01}>
                                 {messageUser}
                             </Text>
                             <Text
                                 fSize={20}
-                                color='#fff'>
+                                color={colors.COLOR_PRYMARY_WHITE_BASE_01}>
                                 {nameUser}
                             </Text>
 
                         </Box>
                     </Box>
                     <Box
-                        backgroundColor='#ffffff68'
+                        backgroundColor={colors.COLOR_PRYMARY_GREY_BASE_05}
                         height='80%'
                         width='10%'
                         borderRadius='10px'
                         alignItems='center'
                         justifyContent='center'>
                         <Icon
-                            name='notifications-outline' size={20} color='#eeff00b5' />
+                            name='notifications-outline' size={20} color={colors.COLOR_PRYMARY_YELLOW_BASE_01} />
                     </Box>
                 </Box>
 
@@ -87,7 +89,7 @@ const Home: React.FC<PropsHome> = ({
                     <Box
                         height='100%'
                         width='70%'
-                        backgroundColor='#ffffff'
+                        backgroundColor={colors.COLOR_PRYMARY_WHITE_BASE_01}
                         marginRight='5px'
                         flexDirections='row'
                         justifyContent='space-between'
@@ -104,11 +106,11 @@ const Home: React.FC<PropsHome> = ({
                             width='20%'
                             borderRadiusTopRight='5px'
                             borderRadiusBottomRight='5px'
-                            backgroundColor='#feed00a9'
+                            backgroundColor={colors.COLOR_PRYMARY_YELLOW_BASE_01}
                             alignItems='center'
                             justifyContent='center'>
 
-                            <Lupa name='magnifying-glass' size={20} color='#000' />
+                            <Lupa name='magnifying-glass' size={20} color={colors.COLOR_PRYMARY_BLACK_BASE_01} />
 
                         </BoxTouch>
 
@@ -126,7 +128,7 @@ const Home: React.FC<PropsHome> = ({
                     alignItems='flex-start'>
                     <Text
                         fSize={15}
-                        color='#fff'
+                        color={colors.COLOR_PRYMARY_WHITE_BASE_01}
                         fWeight='bold'>
                         {movies}
                     </Text>
@@ -147,7 +149,7 @@ const Home: React.FC<PropsHome> = ({
                                 borderRadius: 10
                             }} />
                             <Box alignItems='center' height='100%' >
-                                <Text fSize={15} fWeight='bold' color='#ff0000'>
+                                <Text fSize={15} fWeight='bold' color={colors.COLOR_PRYMARY_RED_BASE_01}>
                                     {item.name}
                                 </Text>
                             </Box>
@@ -161,13 +163,13 @@ const Home: React.FC<PropsHome> = ({
                     alignItems='center'>
                     <Text
                         fSize={15}
-                        color='#ffffff68'>
+                        color={colors.COLOR_PRYMARY_GREY_BASE_05}>
                         Episódio 1
                     </Text>
                     <Text
                         fSize={25}
                         fWeight='bold'
-                        color='#ffffff'>
+                        color={colors.COLOR_PRYMARY_WHITE_BASE_01}>
                         THE 100
                     </Text>
 
@@ -179,17 +181,17 @@ const Home: React.FC<PropsHome> = ({
                         height='15px'>
                         <Box
                             width='15px'>
-                            <Circle name='circle' size={10} color='#ffffff6a' />
+                            <Circle name='circle' size={10} color={colors.COLOR_PRYMARY_GREY_BASE_04} />
                         </Box>
 
                         <Box
                             width='15px'>
-                            <Circle name='circle' size={10} color='#ffffff' />
+                            <Circle name='circle' size={10} color={colors.COLOR_PRYMARY_WHITE_BASE_01} />
                         </Box>
 
                         <Box
                             width='15px'>
-                            <Circle name='circle' size={10} color='#ffffff6a' />
+                            <Circle name='circle' size={10} color={colors.COLOR_PRYMARY_GREY_BASE_04} />
                         </Box>
                     </Box>
                 </Box>
@@ -206,7 +208,7 @@ const Home: React.FC<PropsHome> = ({
                     alignItems='flex-start'>
                     <Text
                         fSize={15}
-                        color='#fff'
+                        color={colors.COLOR_PRYMARY_WHITE_BASE_01}
                         fWeight='bold'>
                         {title}
                     </Text>
