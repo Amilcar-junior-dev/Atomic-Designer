@@ -19,3 +19,18 @@ export interface PropsColors {
     COLOR_PRYMARY_GREEN_BASE_02: string;
     COLOR_PRYMARY_GREEN_BASE_03: string
 }
+
+export interface PropsThemeDefault {
+    fontSize: PropsFontSize
+}
+
+interface PropsFontSize {
+    smaller: number
+    small: number
+    midde: number
+    normal: number
+    big: number
+    xbig: number
+    xxbig: number
+    xxxbig: number
+}

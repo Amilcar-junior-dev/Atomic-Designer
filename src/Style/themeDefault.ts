@@ -14,7 +14,7 @@ const fontSize = {
     xbig: theme.FONT_SIZE_XBIG,
     xxbig: theme.FONT_SIZE_XXBIG,
     xxxbig: theme.FONT_SIZE_XXXBIG,
-}
+};
 
 export default {
     fontSize,

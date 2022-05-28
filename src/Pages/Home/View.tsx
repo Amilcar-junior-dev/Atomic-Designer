@@ -2,6 +2,7 @@ import React, { Children } from 'react';
 import { ScrollView, TextInput } from 'react-native';
 
 import theme from '../../Style/theme';
+import ThemeDefault from '../../Style/themeDefault';
 import { BoxTouch, Box } from '../../Atomic/Atoms/Box';
 import { Container } from '../../Atomic/Atoms/Box/styledLinear';
 import { Text } from '../../Atomic/Atoms/Text'
@@ -27,6 +28,7 @@ const Home: React.FC<PropsHome> = ({
     searchMovies,
 }) => {
     const {colors} = theme
+    const {fontSize} = ThemeDefault
     return (
         <Container colors={['#000000', '#37393e', '#000000']}>
             <ScrollView showsVerticalScrollIndicator={false}>
@@ -59,12 +61,12 @@ const Home: React.FC<PropsHome> = ({
                             height='100%'
                             flexDirections='column'>
                             <Text
-                                fSize={15}
+                                fSize={fontSize.normal}
                                 color={colors.COLOR_PRYMARY_WHITE_BASE_01}>
                                 {messageUser}
                             </Text>
                             <Text
-                                fSize={20}
+                                fSize={fontSize.xbig}
                                 color={colors.COLOR_PRYMARY_WHITE_BASE_01}>
                                 {nameUser}
                             </Text>
@@ -113,11 +115,8 @@ const Home: React.FC<PropsHome> = ({
                             <Lupa name='magnifying-glass' size={20} color={colors.COLOR_PRYMARY_BLACK_BASE_01} />
 
                         </BoxTouch>
-
-
                     </Box>
                 </Box>
-
 
                 <Box
                     marginTop='15px'
@@ -127,7 +126,7 @@ const Home: React.FC<PropsHome> = ({
                     marginLeft='10px'
                     alignItems='flex-start'>
                     <Text
-                        fSize={15}
+                        fSize={fontSize.normal}
                         color={colors.COLOR_PRYMARY_WHITE_BASE_01}
                         fWeight='bold'>
                         {movies}
@@ -149,7 +148,7 @@ const Home: React.FC<PropsHome> = ({
                                 borderRadius: 10
                             }} />
                             <Box alignItems='center' height='100%' >
-                                <Text fSize={15} fWeight='bold' color={colors.COLOR_PRYMARY_RED_BASE_01}>
+                                <Text fSize={fontSize.normal} fWeight='bold' color={colors.COLOR_PRYMARY_RED_BASE_01}>
                                     {item.name}
                                 </Text>
                             </Box>
@@ -162,12 +161,12 @@ const Home: React.FC<PropsHome> = ({
                     height='80px'
                     alignItems='center'>
                     <Text
-                        fSize={15}
+                        fSize={fontSize.normal}
                         color={colors.COLOR_PRYMARY_GREY_BASE_05}>
                         Episódio 1
                     </Text>
                     <Text
-                        fSize={25}
+                        fSize={fontSize.xxxbig}
                         fWeight='bold'
                         color={colors.COLOR_PRYMARY_WHITE_BASE_01}>
                         THE 100
@@ -196,9 +195,6 @@ const Home: React.FC<PropsHome> = ({
                     </Box>
                 </Box>
 
-
-
-
                 <Box
                     marginTop='15px'
                     marginBottom='5px'
@@ -207,7 +203,7 @@ const Home: React.FC<PropsHome> = ({
                     marginLeft='10px'
                     alignItems='flex-start'>
                     <Text
-                        fSize={15}
+                        fSize={fontSize.normal}
                         color={colors.COLOR_PRYMARY_WHITE_BASE_01}
                         fWeight='bold'>
                         {title}
