@@ -3,7 +3,7 @@ import { ScrollView, TextInput } from 'react-native';
 
 import theme from '../../Style/theme';
 import ThemeDefault from '../../Style/themeDefault';
-import { BoxTouch, Box } from '../../Atomic/Atoms/Box';
+import { BoxTouch, Box, BoxShadow } from '../../Atomic/Atoms/Box';
 import { Container } from '../../Atomic/Atoms/Box/styledLinear';
 import { Text } from '../../Atomic/Atoms/Text'
 import { Image } from '../../Atomic/Image';
@@ -228,6 +228,17 @@ const Home: React.FC<PropsHome> = ({
                         </Box>
                     ))}
                 </ContainerScrollHorizontall>
+                <Box  height='500px' backgroundColor='#fff'alignItems='center'justifyContent='center'>
+
+                    <BoxShadow type='level5' height='200px' width='300px' >
+                        <Box height='200px' width='300px' backgroundColor='#525151'>
+
+                        </Box>
+
+                    </BoxShadow>
+
+                </Box>
+
 
             </ScrollView>
         </Container>

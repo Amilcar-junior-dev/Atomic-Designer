@@ -15,9 +15,18 @@ const fontSize = {
     xxbig: theme.FONT_SIZE_XXBIG,
     xxxbig: theme.FONT_SIZE_XXXBIG,
 };
+const shadow = {
+    level0: theme.SHADOW_LEVEL_0,
+    level1: theme.SHADOW_LEVEL_1,
+    level2: theme.SHADOW_LEVEL_2,
+    level3: theme.SHADOW_LEVEL_3,
+    level4: theme.SHADOW_LEVEL_4,
+    level5: theme.SHADOW_LEVEL_5,
+};
 
 export default {
     fontSize,
+    shadow
 }
 
 

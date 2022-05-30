@@ -20,6 +20,7 @@ function Shadow({ width,
     position,
     children,
     index,
+    type = 'level1'
 }: PropsBoxShadow) {
     return (
         <BoxShadow

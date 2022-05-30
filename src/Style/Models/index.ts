@@ -21,7 +21,8 @@ export interface PropsColors {
 }
 
 export interface PropsThemeDefault {
-    fontSize: PropsFontSize
+    fontSize: PropsFontSize,
+    Shadow: PropsShadow,
 }
 
 interface PropsFontSize {
@@ -33,4 +34,21 @@ interface PropsFontSize {
     xbig: number
     xxbig: number
     xxxbig: number
+};
+
+interface PropsShadow {
+    level0: string,
+    level1: string,
+    level2: string,
+    level3: string,
+    level4: string,
+    level5: string,
 }
+
+export type PropsShadowTokens =
+    | 'level0'
+    | 'level1'
+    | 'level2'
+    | 'level3'
+    | 'level4'
+    | 'level5'

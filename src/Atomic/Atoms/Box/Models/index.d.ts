@@ -1,4 +1,5 @@
 
+import {PropsShadowTokens} from '../../../../Style/Models'
 export interface ContainerProps {
     width?: string | number
     heigth?: string | number
@@ -98,7 +99,8 @@ export interface PropsBoxShadow{
     borderWidth?: string
     position?: 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky'
     flexDirection?: 'row' | 'column' | 'row-reverse' |'column-reverse'
-    shadow: string
+    type?: PropsShadowTokens
+    shadow?: string
     children?: any
     index?: number
 }
