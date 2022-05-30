@@ -232,17 +232,6 @@ const Home: React.FC<PropsHome> = ({
                         </Box>
                     ))}
                 </ContainerScrollHorizontall>
-                <Box  height='500px' backgroundColor='#fff'alignItems='center'justifyContent='center'>
-
-                    <BoxShadow type='level1' height='200px' width='300px' >
-                        <Box height='200px' width='300px' backgroundColor='#ffffff'>
-
-                        </Box>
-
-                    </BoxShadow>
-
-                </Box>
-
 
             </ScrollView>
         </Container>

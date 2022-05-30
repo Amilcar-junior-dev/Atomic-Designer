@@ -6,7 +6,6 @@ export const FONT_SIZE_BIG = 18;
 export const FONT_SIZE_XBIG = 20;
 export const FONT_SIZE_XXBIG = 22;
 export const FONT_SIZE_XXXBIG = 25;
-
 export const SHADOW_LEVEL_0 = {
     level: `0px 0px 0px #00000000`,
     opacity: 0,
@@ -33,7 +32,7 @@ export const SHADOW_LEVEL_4 = {
     elevation: 8,
 };
 export const SHADOW_LEVEL_5 = {
-    level: `0px 4px 10px #FF6600`,
+    level: `0px 4px 10px #000000`,
     opacity: 0.2,
     elevation: 10
 }
