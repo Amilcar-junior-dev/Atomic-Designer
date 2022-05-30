@@ -3,7 +3,8 @@ import { ScrollView, TextInput } from 'react-native';
 
 import theme from '../../Style/theme';
 import ThemeDefault from '../../Style/themeDefault';
-import { BoxTouch, Box, BoxShadow } from '../../Atomic/Atoms/Box';
+import { BoxTouch, Box } from '../../Atomic/Atoms/Box';
+import  BoxShadow  from '../../Atomic/Atoms/Box/shadow';
 import { Container } from '../../Atomic/Atoms/Box/styledLinear';
 import { Text } from '../../Atomic/Atoms/Text'
 import { Image } from '../../Atomic/Image';
@@ -12,7 +13,9 @@ import { PropsHome } from './Models';
 
 import Icon from 'react-native-vector-icons/Ionicons'
 import Circle from 'react-native-vector-icons/FontAwesome'
-import Lupa from 'react-native-vector-icons/Entypo'
+import Lupa from 'react-native-vector-icons/Entypo';
+
+
 
 const Home: React.FC<PropsHome> = ({
     nameUser,
@@ -26,7 +29,8 @@ const Home: React.FC<PropsHome> = ({
     setText,
     resp,
     searchMovies,
-}) => {
+}) =>{
+    
     const {colors} = theme
     const {fontSize} = ThemeDefault
     return (
@@ -230,8 +234,8 @@ const Home: React.FC<PropsHome> = ({
                 </ContainerScrollHorizontall>
                 <Box  height='500px' backgroundColor='#fff'alignItems='center'justifyContent='center'>
 
-                    <BoxShadow type='level5' height='200px' width='300px' >
-                        <Box height='200px' width='300px' backgroundColor='#525151'>
+                    <BoxShadow type='level1' height='200px' width='300px' >
+                        <Box height='200px' width='300px' backgroundColor='#ffffff'>
 
                         </Box>
 

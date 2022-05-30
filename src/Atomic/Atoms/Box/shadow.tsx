@@ -1,10 +1,10 @@
 import React from 'react';
+import { shadowOptions } from '../../constants/tokens';
 import { BoxShadow } from './index';
 import { PropsBoxShadow } from './Models';
 
 function Shadow({ width,
     height,
-    shadow,
     alignItems,
     backgroundColor,
     borderColor,
@@ -22,11 +22,11 @@ function Shadow({ width,
     index,
     type = 'level1'
 }: PropsBoxShadow) {
+    console.log('TESTE SHADOW IN SHADOW',shadowOptions(type))
     return (
         <BoxShadow
             width={width}
             height={height}
-            shadow={shadow}
             alignItems={alignItems}
             backgroundColor={backgroundColor}
             borderColor={borderColor}
@@ -40,12 +40,13 @@ function Shadow({ width,
             marginRight={marginRight}
             pd={pd}
             position={position}
+            shadow={shadowOptions(type).level}
             style={{
-                shadowOpacity: 0.04,
-                elevation: 10
-
+                shadowOpacity:shadowOptions(type).opacity,
+                elevation:shadowOptions(type).elevation,
             }}
             index={index}>
+                
             {children}
         </BoxShadow>
     )
